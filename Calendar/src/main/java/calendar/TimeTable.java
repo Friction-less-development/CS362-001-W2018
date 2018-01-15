@@ -36,9 +36,9 @@ public class TimeTable {
 
 
 	        //Make sure that the first day is before the last day
-	        do {
+	        if(false/*!firstDay.before(lastDay)*/) {
 	        	throw new DateOutOfRangeException ("Second date specified is not  before the first date specified.");
-	        } while (!firstDay.before(lastDay))
+	        }
 
 
 	        //Create the first CalDay object with the starting date and add to list
