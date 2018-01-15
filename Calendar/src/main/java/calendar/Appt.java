@@ -162,7 +162,7 @@ public class Appt implements  Comparable<Appt>{
     /** Sets title */
     public void setTitle(String title) {
         if (title == null)
-            this.title = "";
+            this.title = "null";
         else
             this.title = title;
     }
@@ -170,7 +170,7 @@ public class Appt implements  Comparable<Appt>{
     /** Sets description */
     public void setDescription(String description) {
         if (description == null)
-            this.description = "";
+            this.description = "null";
         else
             this.description = description;
     }
@@ -277,7 +277,7 @@ public class Appt implements  Comparable<Appt>{
      * @return a printable representation of this appointment
      */
     private String represntationApp(){
-        String half = (getStartHour() > 11) ? "pm" : "am";
+        String half = (getStartHour() > 12) ? "pm" : "am";
         int printableHour = getStartHour();
         if (printableHour > 11)
         {
