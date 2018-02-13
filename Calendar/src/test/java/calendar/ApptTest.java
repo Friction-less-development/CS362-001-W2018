@@ -21,6 +21,17 @@ public class ApptTest {
 			assertTrue("Day is set", test01Appt.getStartDay() == 5);
 			assertTrue("Minute is set", test01Appt.getStartMinute() == 30);
 			assertTrue("Hour is set", test01Appt.getStartHour() == 6);
+			assertTrue("Default recurrence is set", test01Appt.getRecurBy() == 2 && !test01Appt.isRecurring());
+	 }
+
+	 @Test
+		public void test01b()  throws Throwable  {
+			Appt test01Appt = new Appt(25, 30, 5, 5, 2025, "Title", "Description");
+			assertTrue("Testing invalid setups", test01Appt.getValid() == false);
+			test01Appt = new Appt(22, -30, 5, 5, 2025, "Title", "Description");
+			assertTrue("Testing invalid setups", test01Appt.getValid() == false);
+			test01Appt = new Appt(22, 70, 5, 5, 2025, "Title", "Description");
+			assertTrue("Testing invalid setups", test01Appt.getValid() == false);
 	 }
 
 	 @Test
@@ -59,6 +70,7 @@ public class ApptTest {
 			assertTrue("Is valid", test05Appt.getValid() == true);
 			test05Appt.setStartMonth(1);
 			assertTrue("Month has been changed", test05Appt.getStartMonth() == 1);
+			assertTrue("Is valid", test05Appt.getValid() == true);
 	 }
 
 	 @Test
@@ -67,6 +79,7 @@ public class ApptTest {
 			assertTrue("Is valid", test06Appt.getValid() == true);
 			test06Appt.setStartYear(1950);
 			assertTrue("Year has been changed", test06Appt.getStartYear() == 1950);
+			assertTrue("Is valid", test06Appt.getValid() == true);
 	 }
 
 	 @Test
@@ -87,7 +100,7 @@ public class ApptTest {
 
 	 @Test
 		public void test09()  throws Throwable  {
-			Appt test09Appt = new Appt(6, 30, 5, 5, 2025, "Title", "Description");
+			Appt test09Appt = new Appt(6, 30, 31, 5, 2025, "Title", "Description");
 			assertTrue("Is not null", test09Appt.toString() != null);
 			test09Appt.setStartDay(50);
 			assertTrue("Is null", test09Appt.toString() == null);
@@ -101,6 +114,9 @@ public class ApptTest {
 			Appt test10Appt = new Appt(6, 30, 5, 5, 2025, "Title", "Description");
 			Appt test10Appt2 = new Appt(6, 30, 5, 5, 2025, "Title", "Description");
 			assertTrue("2 Appts have the same compareTo", test10Appt.compareTo(test10Appt2) == 0);
+			Appt test10Appt3 = new Appt(6, 35, 5, 5, 2025, "Title", "Description");
+			Appt test10Appt4 = new Appt(6, 30, 5, 5, 2025, "Title", "Description");
+			assertTrue("2 different Appts have different compareTo", test10Appt3.compareTo(test10Appt4) > 0);
 	 }
 
 	 @Test
