@@ -48,7 +48,7 @@ public class TimeTableTest {
 			assertTrue("Time Table has correct appts", tt.getLast().appts.size() == 2);
 	 }
 
-	 /*@Test
+	 @Test
 		public void test01c()  throws Throwable  { //Last before first
 			TimeTable test01TimeTable = new TimeTable();
 			 Appt test01Appt1 = new Appt(6, 30, 5, 5, 2005, "Title", "Description"); //5(day)-5-2005 @6:30
@@ -62,7 +62,7 @@ public class TimeTableTest {
 			 ApptList.add(test01Appt3);
 			 LinkedList<CalDay> tt = test01TimeTable.getApptRange(ApptList, first, last);
 			assertTrue("Time Table has correct length", tt.size() == 0);
-	 }*/
+	 }
 
 	 @Test
 		public void test01d()  throws Throwable  { //first occurence after last day
