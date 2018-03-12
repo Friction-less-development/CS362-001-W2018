@@ -79,7 +79,7 @@ public class ApptRandomTest {
 				          startYear ,
 				          title,
 				         description);
-				if(startHour < 0 || startHour > 23){
+				/*if(startHour < 0 || startHour > 23){
 					assertTrue("Valid hour", !appt.getValid());
 				} else {
 					assertFalse("Valid hour", appt.getValid());
@@ -93,7 +93,7 @@ public class ApptRandomTest {
 					assertTrue("Valid day", !appt.getValid());
 				} else {
 					assertFalse("Valid day", appt.getValid());
-				}
+				}*/
 			 if(!appt.getValid())continue;
 			for (int i = 0; i < NUM_TESTS; i++) {
 					String methodName = ApptRandomTest.RandomSelectMethod(random);

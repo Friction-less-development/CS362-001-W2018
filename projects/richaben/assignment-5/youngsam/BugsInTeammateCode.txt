@@ -1,0 +1,4 @@
+Appt's are not being marked valid when they should be. Check the isValid() code for Appt.
+Time Tables are not returning the correct amount of CalDays. Check the “getApptRange” function.
+
+Running environment is Windows 8.1, built through command prompt (mvn clean -> mvn compile -> mvn tests)
